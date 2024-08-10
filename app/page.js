@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <>
       <NavBar />
-      {/* <Hero /> */}
+      <Hero />
       {/* <Services />
       <Layouts />
       <Features />
