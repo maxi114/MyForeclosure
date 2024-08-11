@@ -9,41 +9,23 @@ import image2 from '@/public/images/svg/features-2.svg';
 
 const services = [
   {
-    icon: 'uil uil-desktop',
-    title: 'Responsive Layouts',
+    icon: 'ri ri-openai-fill',
+    title: 'AI-Powered Customer Support',
     description:
-      'Et harum quidem rerum as expedita distinctio nam libero tempore cum soluta nobis est cumque quo.',
+      'Get instant answers to your questions with our AI-powered customer support, available 24/7. Whether you need help navigating the platform or understanding your options, our intelligent assistant is here to guide you every step of the way.',
   },
   {
-    icon: 'uil uil-vector-square',
-    title: 'Based on Bootstrap UI',
+    icon: 'ri ri-briefcase-5-fill',
+    title: 'Expert Legal Consultation',
     description:
-      'Temporibus autem quibusdam et aut officiis necessitatibus saepe eveniet ut sit et recusandae.',
+      'Connect with experienced real estate attorneys who specialize in foreclosure prevention and recovery. Our platform ensures you receive personalized legal advice tailored to your unique situation.',
   },
   {
-    icon: 'uil uil-presentation',
-    title: 'Creative Design',
+    icon: 'ri ri-shield-user-fill',
+    title: 'Secure Document Management',
     description:
-      'Nam libero tempore, cum soluta a est eligendi minus id quod maxime placeate facere assumenda est.',
-  },
-  {
-    icon: 'uil uil-apps',
-    title: 'Multiple Applications',
-    description:
-      'Et harum quidem rerum as expedita distinctio nam libero tempore cum soluta nobis est cumque quo.',
-  },
-  {
-    icon: 'uil uil-shopping-cart-alt',
-    title: 'Ecommerce Pages',
-    description:
-      'Temporibus autem quibusdam et aut officiis necessitatibus saepe eveniet ut sit et recusandae.',
-  },
-  {
-    icon: 'uil uil-grids',
-    title: 'Multiple Layouts',
-    description:
-      'Nam libero tempore, cum soluta a est eligendi minus id quod maxime placeate facere assumenda est.',
-  },
+      'Easily upload, track, and manage all your important documents with our secure document management system. Keep everything organized and accessible in one place, ensuring you never miss a critical deadline.',
+  }
 ];
 
 const layouts = [

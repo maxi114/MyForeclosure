@@ -14,14 +14,14 @@ const Services = () => {
 								<i className="mdi mdi-infinity"></i>
 							</h1>
 							<h3>
-								The admin is fully <span className="text-primary">responsive </span>
-								and easy to <span className="text-primary">customize</span>
+                                Prevent foreclosure and <span className="text-primary">secure </span>
+								your home with <br />
+                                <span className="text-primary">expert </span> assistance tailored to your needs.
 							</h3>
 							<p className="text-muted mt-2">
-								The clean and well commented code allows easy customization of the
-								theme.It&apos;s designed for
+                                Navigate financial hardships with confidence and find the support you deserve.
 								<br />
-								describing your app, agency or business.
+								Step-by-step guidance through the foreclosure prevention and recovery process.
 							</p>
 						</div>
 					</Col>
