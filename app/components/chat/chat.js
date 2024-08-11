@@ -87,7 +87,7 @@ export default function Chat() {
         className="gradient-custom"
         style={{
           background:
-            "linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(85,133,176,1) 35%, rgba(0,212,255,1) 100%)",
+            "linear-gradient(to bottom,#f1efe7, #f8eab3)",
           borderRadius: "10px",
           minWidth: '350px',
           margin: 'auto'
