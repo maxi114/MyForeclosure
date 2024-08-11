@@ -9,12 +9,34 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^0.0.43",
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
+    "@mui/material": "^5.16.6",
+    "@progress/kendo-react-buttons": "^8.2.0",
+    "@progress/kendo-react-popup": "^8.2.0",
+    "@radix-ui/react-label": "^2.1.0",
+    "@radix-ui/react-select": "^2.1.1",
+    "@radix-ui/react-slot": "^1.1.0",
+    "bootstrap": "^5.3.3",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "flag-icons": "^7.2.3",
+    "framer-motion": "^11.3.24",
+    "lucide-react": "^0.426.0",
+    "next": "14.2.5",
+    "openai": "^4.55.1",
     "react": "^18",
+    "react-bootstrap": "^2.10.4",
     "react-dom": "^18",
-    "next": "14.2.5"
+    "react-loading-indicators": "^1.0.0",
+    "reactjs-popup": "^2.0.6",
+    "tailwind-merge": "^2.4.0",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "eslint": "^8",
-    "eslint-config-next": "14.2.5"
+    "eslint-config-next": "14.2.5",
+    "tailwindcss": "^3.4.9"
   }
 }
