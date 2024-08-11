@@ -44,7 +44,7 @@ const NavBar = () => {
                 rel="noopener noreferrer"
                 className="nav-link d-lg-none"
               >
-                Purchase now
+                Sign Up
               </a>
               <a
                 href="https://themes.getbootstrap.com/product/hyper-react-admin-dashboard-template/"
@@ -52,7 +52,7 @@ const NavBar = () => {
                 rel="noopener noreferrer"
                 className="btn btn-sm btn-light rounded-pill d-none d-lg-inline-flex"
               >
-                <i className="mdi mdi-basket me-2" /> Purchase Now
+                <i className="mdi mdi-account me-2" /> Sign Up
               </a>
             </li>
           </ul>

@@ -6,7 +6,6 @@ File: Main Css File
 
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
-@import "~bootstrap/scss/mixins";
 
 @import "config/variables";
 @import "config/variables-custom";
@@ -15,6 +14,7 @@ File: Main Css File
 
 @import "components/utilities";
 
+@import "~bootstrap/scss/bootstrap";
 
 // Hyper Icons
 @import "icons/materialdesignicons";
