@@ -3,7 +3,7 @@ import { Box, Button, Stack, TextField } from "@mui/material";
 import { useState, useRef, useEffect } from "react";
 import LanguageDropdown from "../language";
 import { ThreeDot } from "react-loading-indicators";
-import css from "./chat.module.css"
+// import css from "./chat.module.css"
 
 export default function Chat() {
   const [messages, setMessages] = useState([
@@ -82,212 +82,74 @@ export default function Chat() {
   };
 
   return (
-    <div>
-      <section
-        className="gradient-custom"
-        style={{
-          background:
-            "linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(85,133,176,1) 35%, rgba(0,212,255,1) 100%)",
-          borderRadius: "10px",
-          minWidth: '350px',
-          margin: 'auto'
-        }}
-      >
-        <div className="container py-5">
-          <div className="row" style={{display: 'flex', flexDirection:'column', maxWidth:'400px'}}>
-            {/* Member List */}
-            <div className="">
-             {/* <h5 className="font-weight-bold mb-3 text-center text-white">
-                You are speaking to Tina our AI assisant
-              </h5>*/}
-              <div className="card mask-custom">
-                <div className="card-body">
-                  <ul className="list-unstyled mb-0">
-                    <li
-                      className="p-2 border-bottom"
-                      style={{
-                        borderBottom: "1px solid rgba(255,255,255,.3)",
-                        position: "relative",
-                      }}
-                    >
-                      <div className="d-flex justify-content-between link-light">
-                        <div className="d-flex flex-row">
-                          <img
-                            src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-5.webp"
-                            alt="avatar"
-                            className="rounded-circle d-flex align-self-center me-3 shadow-1-strong"
-                            width="60"
-                          />
-                          <div className="pt-1">
-                            <p className="fw-bold mb-0 text-black">Tina</p>
-
-                            <p className="small text-black">Representative</p>
-                          </div>
-                        </div>
-                        <div className="pt-1">
-                          {/*<p className="small text-black mb-1">Just now</p>*/}
-                          {/*<LanguageDropdown />*/}
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
+    <div className="container h-100 d-flex flex-column py-3">
+      <div className="row flex-grow-1">
+        <div className="col-12">
+          <div className="card h-100 shadow d-flex flex-column">
+            <div className="card-header bg-primary text-white sticky-top">
+              <div className="d-flex align-items-center">
+                <img
+                  src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-5.webp"
+                  alt="Tina avatar"
+                  className="rounded-circle me-2"
+                  width="40"
+                />
+                <div>
+                  <h5 className="mb-0">Tina</h5>
+                  <small>MyForeClosure Representative</small>
                 </div>
               </div>
             </div>
-            <br/>
-            {/* Chat Messages */}
-
-            <div className="">
-              <ul
-                className={`list-unstyled text-white ${css.ul}`}
-                style={{
-                  border: "solid 1px whitesmoke",
-                  borderRadius: "10px",
-                  padding: "20px",
-                  maxHeight: "400px",
-                  overflow: "auto",
-                }}
-              >
-                {messages.map((message, index) =>
-                  (message.role === "assistant") & (message.content === "") ? (
-                    <div key={index}>
-                      <ThreeDot
-                        color="white"
-                        size="small"
-                        text=""
-                        textColor=""
-                      />
-                      <br />
-                    </div>
-                  ) : (
-                    <li
-                      key={index}
-                      className={`d-flex justify-content-left mb-4 w-75 ${
-                        message.role === "assistant"
-                          ? "ms-auto"
-                          : "justify-content-start"
-                      }`}
-                    >
-                      <div
-                        className="card mask-custom"
-                        style={{ border: "none ", minWidth:'100px' }}
-                      >
-                        <div
-                          className="card-header d-flex justify-content-between p-3"
-                          style={{
-                            border: "1px solid black",
-                            backgroundColor: "black",
-                          }}
-                        >
-                          <p className="fw-bold text-white mb-0">
-                            {message.role === "assistant" ? "Tina" : "You"}
-                          </p>
-                         {/*} <p className="text-white small mb-0">
-                            <i
-                              className="far fa-clock text-white"
-                              style={{ paddingLeft: "10px" }}
-                            ></i>{" "}
-                            12 mins ago
-                          </p>*/}
-                        </div>
-                        <div className="card-body">
-                          <p className="mb-0">{message.content}</p>
-                        </div>
+            <div className="card-body d-flex flex-column flex-grow-1 overflow-hidden">
+              <div className="flex-grow-1 overflow-auto mb-3">
+                {messages.map((message, index) => (
+                  <div key={index} className={`d-flex ${message.role === "assistant" ? "justify-content-start" : "justify-content-end"} mb-3`}>
+                    <div className={`card ${message.role === "assistant" ? "bg-light" : "bg-primary text-white"}`} style={{ maxWidth: "75%" }}>
+                      <div className="card-body py-2 px-3">
+                        <p className="mb-0">{message.content}</p>
                       </div>
-                    </li>
-                  )
+                    </div>
+                  </div>
+                ))}
+                {isLoading && (
+                  <div className="d-flex justify-content-start mb-3">
+                    <div className="card bg-light" style={{ maxWidth: "75%" }}>
+                      <div className="card-body py-2 px-3">
+                        <ThreeDot color="#6c757d" size="small" />
+                      </div>
+                    </div>
+                  </div>
                 )}
-                 <div ref={messagesEndRef} />
-              </ul>
-
-              <div className="mb-3">
-                <div className="form-outline form-white">
+                <div ref={messagesEndRef} />
+              </div>
+              <div className="mt-auto">
+                <div className="input-group">
                   <textarea
-                    className="form-control"
-                    id="textAreaExample3"
-                    rows="4"
-                    placeholder="Message"
+                    className="form-control "
+                    placeholder="Type your message..."
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     onKeyDown={(e) => {
                       if (e.key === "Enter" && !e.shiftKey) {
-                        e.preventDefault(); // Prevents a new line from being added
+                        e.preventDefault();
                         sendMessage();
                       }
                     }}
+                    style={{ resize: "none", overflow: "auto", minHeight: "40px", maxHeight: "100px", overflowY: "auto" }}
+                    onInput={(e) => {
+                      e.target.style.height = 'auto';
+                     
+                    }}
                   ></textarea>
-                  <br />
-                  <label
-                    className="form-label text-black"
-                    htmlFor="textAreaExample3"
-                  ></label>
-                  <button
-                    type="button"
-                    className="btn btn-light btn-lg btn-rounded float-end"
-                    onClick={sendMessage}
-                  >
+                  <button className="btn btn-primary" type="button" onClick={sendMessage} style={{ width: "5rem", height: "4rem " }}>
                     Send
                   </button>
                 </div>
               </div>
             </div>
-
-            {/*-----------------------end of chat messages-------*/}
           </div>
         </div>
-      </section>
-      {/*
-      <Stack
-        direction={'column'}
-        width="500px"
-        height="700px"
-        border="1px solid black"
-        p={2}
-        spacing={3}
-      >
-        <Stack
-          direction={'column'}
-          spacing={2}
-          flexGrow={1}
-          overflow="auto"
-          maxHeight="100%"
-        >
-          {messages.map((message, index) => (
-            <Box
-              key={index}
-              display="flex"
-              justifyContent={
-                message.role === 'assistant' ? 'flex-start' : 'flex-end'
-              }
-            >
-              <Box
-                bgcolor={
-                  message.role === 'assistant'
-                    ? 'primary.main'
-                    : 'secondary.main'
-                }
-                color="white"
-                borderRadius={16}
-                p={3}
-              >
-                {message.content}
-              </Box>
-            </Box>
-          ))}
-        </Stack>
-        <Stack direction={'row'} spacing={2}>
-          <TextField
-            label="Message"
-            fullWidth
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          />
-          <Button variant="contained" onClick={sendMessage}>
-            Send
-          </Button>
-        </Stack>
-      </Stack>
-      */}
+      </div>
     </div>
   );
 }
