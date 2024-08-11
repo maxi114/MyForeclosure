@@ -82,7 +82,7 @@ export default function Chat() {
   };
 
   return (
-    <div className="d-flex flex-column h-100">
+    <div className="d-flex flex-column h-100" >
       <div className="card-header bg-primary text-white">
         <div className="d-flex align-items-center p-2">
           <img
@@ -98,7 +98,7 @@ export default function Chat() {
           </div>
         </div>
       </div>
-      <div className="flex-grow-1 overflow-auto p-3" style={{ maxHeight: "calc(100% - 130px)" }}>
+      <div className="flex-grow-1 overflow-auto p-3" style={{ maxHeight: "calc(100% - 100px)" }}>
         {messages.map((message, index) => (
           <div key={index} className={`d-flex ${message.role === "assistant" ? "justify-content-start" : "justify-content-end"} mb-3`}>
             <div className={`card ${message.role === "assistant" ? "bg-light" : "bg-primary text-white"}`} style={{ maxWidth: "75%" }}>
@@ -132,7 +132,7 @@ export default function Chat() {
                 sendMessage();
               }
             }}
-            style={{ resize: "none", overflow: "auto", minHeight: "40px", maxHeight: "100px" }}
+            style={{ resize: "none", overflow: "auto", minHeight: "30px", maxHeight: "80px" }}
           ></textarea>
           <button className="btn btn-primary" type="button" onClick={sendMessage} style={{ width: "5rem" }}>
             Send
