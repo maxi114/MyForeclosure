@@ -25,12 +25,12 @@ const NavBar = () => {
             <Nav.Item className="mx-lg-1">
               <Link href="#features-landing" className="nav-link">Features</Link>
             </Nav.Item>
-            <Nav.Item className="mx-lg-1">
+            {/* <Nav.Item className="mx-lg-1">
               <Link href="#pricing-landing" className="nav-link">Pricing</Link>
-            </Nav.Item>
-            <Nav.Item className="mx-lg-1">
+            </Nav.Item> */}
+            {/* <Nav.Item className="mx-lg-1">
               <Link href="#faq-landing" className="nav-link">FAQs</Link>
-            </Nav.Item>
+            </Nav.Item> */}
             <Nav.Item className="mx-lg-1">
               <Link href="#contact-us-landing" className="nav-link">Contact</Link>
             </Nav.Item>
@@ -38,16 +38,16 @@ const NavBar = () => {
 
           <ul className="navbar-nav ms-auto align-items-center">
             <li className="nav-item me-0">
-              <a
+              {/* <a
                 href="https://themes.getbootstrap.com/product/hyper-react-admin-dashboard-template/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="nav-link d-lg-none"
               >
                 Sign Up
-              </a>
+              </a> */}
               <a
-                href="https://themes.getbootstrap.com/product/hyper-react-admin-dashboard-template/"
+                href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-sm btn-light rounded-pill d-none d-lg-inline-flex"
