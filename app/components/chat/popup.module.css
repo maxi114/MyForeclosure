@@ -1,0 +1,10 @@
+.chat {
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for all properties over 0.3 seconds */
+}
+
+.chat:hover {
+    /* Add the styles you want to change on hover */
+    transform: scale(1.05); /* Example: slightly scale up on hover */
+   
+}

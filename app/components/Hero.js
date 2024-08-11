@@ -2,7 +2,7 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import Link from 'next/link';
 import Image from 'next/image';
-import image1 from '@/public/images/svg/startup.svg';
+import image1 from '../../public/images/svg/startup.svg';
 
 const Hero = () => {
 	return (

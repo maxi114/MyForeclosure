@@ -1,11 +1,11 @@
-import layout1 from '@/public/images/layouts/layout-1.png';
-import layout2 from '@/public/images/layouts/layout-2.png';
-import layout3 from '@/public/images/layouts/layout-3.png';
-import layout4 from '@/public/images/layouts/layout-4.png';
-import layout5 from '@/public/images/layouts/layout-5.png';
-import layout6 from '@/public/images/layouts/layout-6.png';
-import image1 from '@/public/images/svg/features-1.svg';
-import image2 from '@/public/images/svg/features-2.svg';
+import layout1 from '../../public/images/layouts/layout-1.png';
+import layout2 from '../../public/images/layouts/layout-2.png';
+import layout3 from '../../public/images/layouts/layout-3.png';
+import layout4 from '../../public/images/layouts/layout-4.png';
+import layout5 from '../../public/images/layouts/layout-5.png';
+import layout6 from '../../public/images/layouts/layout-6.png';
+import image1 from '../../public/images/svg/features-1.svg';
+import image2 from '../../public/images/svg/features-2.svg';
 
 const services = [
   {

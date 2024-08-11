@@ -12,8 +12,11 @@ const Services = dynamic(() => import('./components/Services'), { ssr: false });
 // const Footer = dynamic(() => import('./components/Footer'), { ssr: false });
 
 
+import React from 'react';
 
-export default function Home() {
+import Popupp from './components/chat/popup';
+
+export default function page() {
   return (
     <>
       <NavBar />
@@ -25,7 +28,7 @@ export default function Home() {
       {/* <FAQ /> */}
       {/* <ContactUs /> */}
       {/* <Footer /> */}
+      <Popupp/>
     </>
-    
   );
 }
