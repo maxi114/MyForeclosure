@@ -1,49 +1,63 @@
 "use client";
-import React from "react";
-import Popup from "reactjs-popup";
+import React, {useState} from "react";
 import Chat from "./chat";
-import css from "./popup.module.css";
 import { motion } from "framer-motion";
-import { fadeIn, staggerChildren } from "../../lib/motion";
+import { fadeIn } from "../../lib/motion";
 
 export default function Popupp() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <motion.div
-      variants={staggerChildren}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: false, amount: 0.25 }}
+    <div
       style={{
-        height: "100vh",
-        position: "relative",
+        position: "fixed",
+        bottom: "20px",
+        right: "20px",
+        zIndex: 1000,
       }}
     >
-      <Popup
-        Width="300px"
-        trigger={
-          <motion.div
-          variants={fadeIn("up", "tween", 0.5, 1)}
-            style={{
-              position: "absolute",
-              bottom: "20px",
-              right: "20px",
-              width: "400px",
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
-            <i
-              className="ri ri-chat-3-line"
-              style={{ width: "150px" }}
-              src="ri ri-chat-3-line"
-              alt="Description of image"
-            />
-          </motion.div>
-        }
-        position="top left"
+      {isOpen && (
+        <div
+          style={{
+            position: "absolute",
+            bottom: "80px",
+            right: "20px",
+            width: "350px",
+            height: "600px",
+            backgroundColor: "white",
+            boxShadow: "0 0 10px rgba(0,0,0,0.1)",
+            borderRadius: "10px",
+            overflow: "hidden",
+          }}
+        >
+          <Chat />
+        </div>
+      )}
+      <motion.div
+        variants={fadeIn("up", "tween", 0.5, 1)}
+        initial="hidden"
+        animate="show"
+        onClick={() => setIsOpen(!isOpen)}
+        
       >
-        <Chat />
-      </Popup>
-    </motion.div>
+        <button
+          className="btn btn-primary rounded-circle"
+          style={{
+            width: "60px",
+            height: "60px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+        <i
+          className="ri-chat-3-line"
+          style={{
+            fontSize: '2rem',
+            color: 'white',
+          }}
+        />
+        </button>
+      </motion.div>
+    </div>
   );
 }

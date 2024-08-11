@@ -2,7 +2,7 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import Link from 'next/link';
 import Image from 'next/image';
-import image1 from '../../public/images/svg/startup.svg';
+import image1 from '../../public/images/5.png';
 
 const Hero = () => {
 	return (
@@ -42,7 +42,7 @@ const Hero = () => {
 					</Col>
 					<Col md={{ span: 5, offset: 2 }}>
 						<div className="text-md-end mt-3 mt-md-0">
-							<Image src={image1} alt="" className="img-fluid" />
+							<Image src={image1} alt="" className="w-100 h-auto" />
 						</div>
 					</Col>
 				</Row>
