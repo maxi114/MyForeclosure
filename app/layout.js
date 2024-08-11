@@ -7,6 +7,9 @@ import Providers from './Providers';
 export const metadata = {
   title: "MyForeclosure",
   description: "MyForeclosure",
+  icons: {
+    icon: '/My_3.png',
+  },
 };
 
 export default function RootLayout({ children }) {
