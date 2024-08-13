@@ -13,7 +13,7 @@ const Footer = () => {
 						<Image src={MyFLogo} alt="" className="logo-dark" />
 						<p className="text-light text-opacity-50 mt-4">
                             Facing foreclosure can be overwhelming, 
-                            <br /> but you don't have to go through it alone. 
+                            <br /> but you don&apos;t have to go through it alone. 
                             <br /> Our platform connects you with experienced 
                             <br /> attorneys who can help you navigate the complexities 
                             <br /> of mortgage and foreclosure regulations.
