@@ -1,6 +1,5 @@
 "use client";
 import { Navbar, Nav, Container } from 'react-bootstrap';
-import "../styles/main.scss";
 import Link from 'next/link';
 import Image from 'next/image';
 import FFlogo from '../../public/images/My_1.png';
