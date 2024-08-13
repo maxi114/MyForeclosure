@@ -9,7 +9,7 @@ const Services = dynamic(() => import('./components/Services'), { ssr: false });
 // const Pricing = dynamic(() => import('./components/Pricing'), { ssr: false });
 // const FAQ = dynamic(() => import('./components/FAQ'), { ssr: false });
 // const ContactUs = dynamic(() => import('./components/ContactUs'), { ssr: false });
-// const Footer = dynamic(() => import('./components/Footer'), { ssr: false });
+const Footer = dynamic(() => import('./components/Footer'), { ssr: false });
 
 
 import React from 'react';
@@ -27,7 +27,7 @@ export default function page() {
       {/* <Pricing /> */}
       {/* <FAQ /> */}
       {/* <ContactUs /> */}
-      {/* <Footer /> */}
+      <Footer />
       <Popupp/>
     </>
   );
