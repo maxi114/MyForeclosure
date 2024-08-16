@@ -1,5 +1,6 @@
 
 import dynamic from 'next/dynamic';
+import React from 'react';
 
 const NavBar = dynamic(() => import('./components/NavBar'), { ssr: false });
 const Hero = dynamic(() => import('./components/Hero'), { ssr: false });
@@ -10,10 +11,6 @@ const Services = dynamic(() => import('./components/Services'), { ssr: false });
 // const FAQ = dynamic(() => import('./components/FAQ'), { ssr: false });
 // const ContactUs = dynamic(() => import('./components/ContactUs'), { ssr: false });
 const Footer = dynamic(() => import('./components/Footer'), { ssr: false });
-
-
-import React from 'react';
-
 import Popupp from './components/chat/popup';
 
 export default function page() {

@@ -38,7 +38,7 @@ const notificationTypes = {
     default: 'light'
 };
 
-export function NotififcationProvider({ children }) {
+export function NotificationProvider({ children }) {
     const [config, setConfig] = useState({
         show: false,
         message: '',

@@ -46,7 +46,7 @@ const NavBar = () => {
                 Sign Up
               </a> */}
               <a
-                href="#"
+                href="/account/register"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-sm btn-light rounded-pill d-none d-lg-inline-flex"
