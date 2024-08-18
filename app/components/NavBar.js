@@ -22,7 +22,7 @@ const NavBar = () => {
               <Link href="/" className="nav-link active">Home</Link>
             </Nav.Item>
             <Nav.Item className="mx-lg-1">
-              <Link href="#features-landing" className="nav-link">Features</Link>
+              <Link href="/attorney/firms" className="nav-link">Attorney</Link>
             </Nav.Item>
             {/* <Nav.Item className="mx-lg-1">
               <Link href="#pricing-landing" className="nav-link">Pricing</Link>

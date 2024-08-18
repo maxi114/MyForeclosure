@@ -1,8 +1,8 @@
 'use client';
-import { ReactNode } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { Row, Col } from 'react-bootstrap';
+import { Breadcrumb } from 'react-bootstrap';
 
 const PageBreadcrumb = ({ subName, title, children }) => {
   return (

@@ -2,7 +2,7 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import Link from 'next/link';
 import Image from 'next/image';
-import image1 from '../../public/images/5.png';
+import image1 from '../../public/images/7.png';
 
 const Hero = () => {
 	return (
@@ -18,13 +18,11 @@ const Hero = () => {
 								</span>
 							</div>
 							<h2 className="text-black fw-normal mb-4 mt-3 hero-title">
-								Empower Your Foreclosure Journey with AI-Driven Insights
+								Unlock New Revenue Streams with AI-Driven Legal Solutions
 							</h2>
 
 							<p className="mb-4 font-16 text-black-50">
-								Helping individuals navigate foreclosure - providing access to transparent guidance like never before.
-								<br/>
-								<br/>Join our platform today to predict, prevent, and recover from foreclosure while attorneys help you claim your rightful surplus funds.
+								Grow your practice by helping homeowners recover from foreclosure. Our platform offers the most advanced AI tools to streamline your workflow and increase your client base.
 							</p>
 
 							<div className="d-flex gap-1">
@@ -33,7 +31,7 @@ const Hero = () => {
 									target="_blank"
 									className="btn btn-lg font-16 btn-success"
 								>
-									Join Now
+									Sign Up
 									<i className="mdi mdi-arrow-right ms-1" />
 								</Link>
 								<Link href="" target="_blank" className="btn btn-lg font-16 btn-info">
