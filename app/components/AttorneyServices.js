@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import classNames from 'classnames';
 import { attorneyservices } from './data';
 
-const Services = () => {
+const AttorneyServices = () => {
 	return (
 		<section className="py-5">
 			<Container>
@@ -53,4 +53,4 @@ const Services = () => {
 	);
 };
 
-export default Services;
+export default AttorneyServices;

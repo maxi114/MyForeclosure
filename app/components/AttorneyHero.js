@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import image1 from '../../public/images/7.png';
 
-const Hero = () => {
+const AttorneyHero = () => {
 	return (
 		<section className="hero-section">
 			<Container>
@@ -51,4 +51,4 @@ const Hero = () => {
 	);
 };
 
-export default Hero;
+export default AttorneyHero;
