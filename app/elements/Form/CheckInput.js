@@ -55,4 +55,7 @@ const CheckInput = forwardRef(({
     );
 });
 
+// Add display name for the component
+CheckInput.displayName = 'CheckInput';
+
 export default CheckInput;

@@ -71,5 +71,7 @@ const PasswordInput = forwardRef(({
     />
   );
 });
+// Add display name for the component
+PasswordInput.displayName = 'PasswordInput';
 
 export default PasswordInput;

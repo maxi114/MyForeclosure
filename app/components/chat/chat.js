@@ -3,6 +3,7 @@ import { Box, Button, Stack, TextField } from "@mui/material";
 import { useState, useRef, useEffect } from "react";
 import LanguageDropdown from "../language";
 import { ThreeDot } from "react-loading-indicators";
+import Image from 'next/image';
 // import css from "./chat.module.css"
 
 export default function Chat() {
@@ -90,6 +91,7 @@ export default function Chat() {
             alt="Tina avatar"
             className="rounded-circle me-2"
             width="40"
+            height='40'
            
           />
           <div>
