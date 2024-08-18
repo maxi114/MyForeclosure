@@ -27,11 +27,11 @@ const Hero = () => {
 
 							<div className="d-flex gap-1">
 								<Link
-									href=""
+									href="account/register"
 									target="_blank"
 									className="btn btn-lg font-16 btn-success"
 								>
-									Get Free Trial
+									Sign Up
 									<i className="mdi mdi-arrow-right ms-1" />
 								</Link>
 								<Link href="" target="_blank" className="btn btn-lg font-16 btn-info">

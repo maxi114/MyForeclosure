@@ -46,13 +46,14 @@ const NavBar = () => {
                 Sign Up
               </a> */}
               <a
-                href="/account/register"
+                href="/account/login"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-sm btn-light rounded-pill d-none d-lg-inline-flex"
+                className="btn btn-sm btn-primary rounded-pill d-none d-lg-inline-flex"
               >
-                <i className="mdi mdi-account me-2" /> Sign Up
+                <i className="mdi mdi-account me-2" /> Login
               </a>
+              
             </li>
           </ul>
         </Navbar.Collapse>
