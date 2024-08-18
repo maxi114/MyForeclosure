@@ -6,12 +6,12 @@ import MyFLogo from '../../public/images/My_1.png';
 
 const Footer = () => {
 	return (
-		<footer className="bg-dark py-5">
+		<footer className="bg-tritary py-5">
 			<Container>
 				<Row>
 					<Col lg={6}>
 						<Image src={MyFLogo} alt="" className="logo-dark" />
-						<p className="text-light text-opacity-50 mt-4">
+						<p className="text-black text-opacity-50 mt-4">
                             Facing foreclosure can be overwhelming, 
                             <br /> but you don&apos;t have to go through it alone. 
                             <br /> Our platform connects you with experienced 
@@ -49,72 +49,72 @@ const Footer = () => {
 						</ul>
 					</Col>
 					<Col lg={2} md={4} className="mt-3 mt-lg-0">
-						<h5 className="text-light">Company</h5>
+						<h5 className="text-black">Company</h5>
 
 						<ul className="list-unstyled ps-0 mb-0 mt-3">
 							<li className="mt-2">
-								<Link href="" className="text-light text-opacity-50">
+								<Link href="" className="text-black text-opacity-50">
 									About Us
 								</Link>
 							</li>
 							<li className="mt-2">
-								<Link href="" className="text-light text-opacity-50">
+								<Link href="" className="text-black text-opacity-50">
 									Documentation
 								</Link>
 							</li>
 							<li className="mt-2">
-								<Link href="" className="text-light text-opacity-50">
+								<Link href="" className="text-black text-opacity-50">
 									Blog
 								</Link>
 							</li>
 						</ul>
 					</Col>
 					<Col lg={2} md={4} className="mt-3 mt-lg-0">
-						<h5 className="text-light">Apps</h5>
+						<h5 className="text-black">Apps</h5>
 
 						<ul className="list-unstyled ps-0 mb-0 mt-3">
 							<li className="mt-2">
-								<Link href="" className="text-light text-opacity-50">
+								<Link href="" className="text-black text-opacity-50">
 									Property Listings
 								</Link>
 							</li>
 							<li className="mt-2">
-								<Link href="" className="text-light text-opacity-50">
+								<Link href="" className="text-black text-opacity-50">
 									Lead Generation
 								</Link>
 							</li>
 							<li className="mt-2">
-								<Link href="" className="text-light text-opacity-50">
-									Social Feed
+								<Link href="" className="text-black text-opacity-50">
+									Education
 								</Link>
 							</li>
 							<li className="mt-2">
-								<Link href="" className="text-light text-opacity-50">
+								<Link href="" className="text-black text-opacity-50">
 									AI Cold Calling
 								</Link>
 							</li>
 							<li className="mt-2">
-								<Link href="" className="text-light text-opacity-50">
+								<Link href="" className="text-black text-opacity-50">
 									CRM - Attorney Dashboard
 								</Link>
 							</li>
 						</ul>
 					</Col>
 					<Col lg={2} md={4} className="mt-3 mt-lg-0">
-						<h5 className="text-light">Discover</h5>
+						<h5 className="text-black">Discover</h5>
 						<ul className="list-unstyled ps-0 mb-0 mt-3">
 							<li className="mt-2">
-								<Link href="" className="text-light text-opacity-50">
+								<Link href="" className="text-black text-opacity-50">
 									Help Center
 								</Link>
 							</li>
 							<li className="mt-2">
-								<Link href="" className="text-light text-opacity-50">
+								<Link href="" className="text-black text-opacity-50">
 									Our Products
 								</Link>
 							</li>
 							<li className="mt-2">
-								<Link href="" className="text-light text-opacity-50" >
+								<Link href="" className="text-black text-opacity-50" >
 									Privacy
 								</Link>
 							</li>
@@ -124,7 +124,7 @@ const Footer = () => {
 				<Row>
 					<Col lg={12}>
 						<div className="mt-5">
-							<p className="text-light text-opacity-50 mt-4 text-center mb-0">
+							<p className="text-black text-opacity-50 mt-4 text-center mb-0">
 								© 2022 - {new Date().getFullYear()} MyForeClosure LLC.
 							</p>
 						</div>

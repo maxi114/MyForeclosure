@@ -47,6 +47,17 @@ $green:         #0acf97;
 $forest-green:  #095b02;
 $teal:          #02a8b5;
 $cyan:          #39afd1;
+$cream:         #f8eab3;
+
+$cream-100: tint-color($cream, 80%);
+$cream-200: tint-color($cream, 60%);
+$cream-300: tint-color($cream, 40%);
+$cream-400: tint-color($cream, 20%);
+$cream-500: $cream;
+$cream-600: shade-color($cream, 20%);
+$cream-700: shade-color($cream, 40%);
+$cream-800: shade-color($cream, 60%);
+$cream-900: shade-color($cream, 80%);
 // scss-docs-end color-variables
 
 // scss-docs-start colors-map
@@ -65,7 +76,8 @@ $colors: (
   "black":      $black,
   "white":      $white,
   "gray":       $gray-600,
-  "gray-dark":  $gray-800
+  "gray-dark":  $gray-800,
+  "cream":      $cream
 );
 // scss-docs-end colors-map
 
@@ -187,6 +199,16 @@ $cyan-600: shade-color($cyan, 20%);
 $cyan-700: shade-color($cyan, 40%);
 $cyan-800: shade-color($cyan, 60%);
 $cyan-900: shade-color($cyan, 80%);
+
+$cream-100: tint-color($cream, 80%);
+$cream-200: tint-color($cream, 60%);
+$cream-300: tint-color($cream, 40%);
+$cream-400: tint-color($cream, 20%);
+$cream-500: $cream;
+$cream-600: shade-color($cream, 20%);
+$cream-700: shade-color($cream, 40%);
+$cream-800: shade-color($cream, 60%);
+$cream-900: shade-color($cream, 80%);
 
 $blues: (
   "blue-100": $blue-100,
@@ -324,6 +346,7 @@ $cyans: (
 // scss-docs-start theme-color-variables
 $primary:       $forest-green;
 $secondary:     $gray-700;
+$tritary:       $cream;
 $success:       $green;
 $info:          $cyan;
 $warning:       $yellow;
@@ -336,6 +359,7 @@ $dark:          $gray-900;
 $theme-colors: (
   "primary":    $primary,
   "secondary":  $secondary,
+  "tritary":    $tritary,
   "success":    $success,
   "info":       $info,
   "warning":    $warning,

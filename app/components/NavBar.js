@@ -22,7 +22,7 @@ const NavBar = () => {
               <Link href="/" className="nav-link active">Home</Link>
             </Nav.Item>
             <Nav.Item className="mx-lg-1">
-              <Link href="#features-landing" className="nav-link">Features</Link>
+              <Link href="/attorney/firms" className="nav-link">Attorney</Link>
             </Nav.Item>
             {/* <Nav.Item className="mx-lg-1">
               <Link href="#pricing-landing" className="nav-link">Pricing</Link>
@@ -46,13 +46,14 @@ const NavBar = () => {
                 Sign Up
               </a> */}
               <a
-                href="#"
+                href="/account/login"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-sm btn-light rounded-pill d-none d-lg-inline-flex"
+                className="btn btn-sm btn-primary rounded-pill d-none d-lg-inline-flex"
               >
-                <i className="mdi mdi-account me-2" /> Sign Up
+                <i className="mdi mdi-account me-2" /> Login
               </a>
+              
             </li>
           </ul>
         </Navbar.Collapse>

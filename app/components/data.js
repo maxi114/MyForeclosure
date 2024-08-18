@@ -28,6 +28,27 @@ const services = [
   }
 ];
 
+const attorneyservices = [
+  {
+    icon: 'ri ri-openai-fill',
+    title: 'AI-Powered Client Acquisition',
+    description:
+      'Automatically identify and connect with high-potential clients using our AI-driven lead generation, tailored specifically for foreclosure cases.',
+  },
+  {
+    icon: 'ri ri-briefcase-5-fill',
+    title: 'Smart Contracts with OpenLaw',
+    description:
+      'Integrate cutting-edge smart contracts into your legal practice, making your transactions faster, more secure, and transparent.',
+  },
+  {
+    icon: 'ri ri-shield-user-fill',
+    title: 'Advanced Data Scraping',
+    description:
+      'Stay ahead with real-time county auction data scraping, providing you with the latest information on surplus funds and potential leads.',
+  }
+];
+
 const layouts = [
   {
     image: layout1,
@@ -164,4 +185,4 @@ const rawFaqs = [
   },
 ];
 
-export { services, layouts, features, plans, rawFaqs };
+export { attorneyservices, services, layouts, features, plans, rawFaqs };
