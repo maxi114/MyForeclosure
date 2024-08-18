@@ -64,3 +64,5 @@ export async function forgotPassword(email) {
     throw new Error('Sorry, we could not find any registered user with entered email');
   }
 }
+
+export const firebaseApp = app;
