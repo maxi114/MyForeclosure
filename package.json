@@ -21,6 +21,10 @@
     "@fullcalendar/react": "^6.1.15",
     "@fullcalendar/timegrid": "^6.1.15",
     "@hookform/resolvers": "^3.9.0",
+    "@langchain/community": "^0.2.28",
+    "@langchain/core": "^0.2.27",
+    "@langchain/openai": "^0.2.7",
+    "@langchain/textsplitters": "^0.0.3",
     "@mui/material": "^5.16.7",
     "@popperjs/core": "^2.11.8",
     "@progress/kendo-react-buttons": "^8.2.0",
@@ -28,6 +32,7 @@
     "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-select": "^2.1.1",
     "@radix-ui/react-slot": "^1.1.0",
+    "@supabase/supabase-js": "^2.45.1",
     "apexcharts": "^3.52.0",
     "bootstrap": "^5.3.3",
     "chart.js": "^4.4.3",
@@ -86,8 +91,10 @@
     "yup": "^1.4.0"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.20",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
-    "tailwindcss": "^3.4.9"
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.10"
   }
 }

@@ -17,6 +17,7 @@ import {
   DialogActions,
   CardActionArea,
 } from "@mui/material";
+import { UploadDocumentsForm } from "../../../components/flashcards/UploadDocumentsForm";
 
 export default function Generate() {
   const [text, setText] = useState("");
@@ -75,7 +76,7 @@ export default function Generate() {
 
     try {
       //send a POST request to flashcards server
-      const response = await fetch("/api/flashcards", {
+      const response = await fetch("/api/flashcards/retrieve", {
         method: "POST",
         body: text,
       });
@@ -104,6 +105,35 @@ export default function Generate() {
   return (
     <Container maxWidth="md">
      
+     {/* Upload documents form commened below*/}
+
+
+    {/* <UploadDocumentsForm/> */}
+
+
+    <Typography variant="h4" component="h1" gutterBottom>
+          Generate Flashcards
+        </Typography>
+        <TextField
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          label="Enter text"
+          fullWidth
+          multiline
+          rows={4}
+          variant="outlined"
+          sx={{ mb: 2 }}
+        />
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handleSubmit}
+          fullWidth
+        >
+          Generate Flashcards
+        </Button>
+
+
      <Grid container spacing={3} sx={{ mt: 4 }}>
         {flashcards.map((flashcard, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
@@ -177,29 +207,8 @@ export default function Generate() {
         ))}
       </Grid>
 
-      <Box sx={{ my: 4 }}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Generate Flashcards
-        </Typography>
-        <TextField
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          label="Enter text"
-          fullWidth
-          multiline
-          rows={4}
-          variant="outlined"
-          sx={{ mb: 2 }}
-        />
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={handleSubmit}
-          fullWidth
-        >
-          Generate Flashcards
-        </Button>
-
+{/*----the below code can be used to allow the preview of the flashcards but can be left commented out for now-----------------------------*/}
+      {/* <Box sx={{ my: 4 }}>
         {flashcards.length > 0 && (
           <Box sx={{ mt: 4 }}>
             <Typography variant="h5" component="h2" gutterBottom>
@@ -225,7 +234,7 @@ export default function Generate() {
         )}
 
         {/*Save flash card button*/}
-        {flashcards.length > 0 && (
+        {/*{flashcards.length > 0 && (
           <Box sx={{ mt: 4, display: "flex", justifyContent: "center" }}>
             <Button
               variant="contained"
@@ -238,7 +247,7 @@ export default function Generate() {
         )}
 
         {/* Dailog modul popup to name and save the flashcards */}
-        <Dialog open={dialogOpen} onClose={handleCloseDialog}>
+        {/*<Dialog open={dialogOpen} onClose={handleCloseDialog}>
           <DialogTitle>Save Flashcard Set</DialogTitle>
           <DialogContent>
             <DialogContentText>
@@ -261,7 +270,7 @@ export default function Generate() {
             </Button>
           </DialogActions>
         </Dialog>
-      </Box>
+      </Box> */}
 
     </Container>
   );
