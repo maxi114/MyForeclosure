@@ -44,7 +44,7 @@ export default function Login({ searchParams }) {
   const { showNotification } = useNotificationContext();
 
   const redirectUrl = useMemo(
-    () => (searchParams?.from ? searchParams.from.toString() : '/dashboard'),
+    () => (searchParams?.from ? searchParams.from.toString() : '/dashboard/education/flashcards'),
     [searchParams]
   );
 
