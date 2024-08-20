@@ -62,7 +62,7 @@ export default function Login({ searchParams }) {
           message: 'Login successful. Welcome!',
           type: 'success',
         });
-        router.push('/dashboard');
+        router.push('/dashboard/education/flashcards');
       }
     } catch (error) {
       showNotification({ message: error.message, type: 'error' });
