@@ -33,7 +33,7 @@ export default function MaintenancePage() {
                 <Image src={Img} height={140} width={140} alt="Maintenance" />
                 <h3 className="mt-4">Site is Under Maintenance</h3>
                 <p className="text-muted">
-                    We're working on something exciting! Please check back soon.
+                    We are working on something exciting! Please check back soon.
                 </p>
 
                 <Row className="mt-5">
