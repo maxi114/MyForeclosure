@@ -27,7 +27,7 @@ const AttorneyHero = () => {
 
 							<div className="d-flex gap-1">
 								<Link
-									href="account/register"
+									href="/account/register"
 									target="_blank"
 									className="btn btn-lg font-16 btn-success"
 								>
