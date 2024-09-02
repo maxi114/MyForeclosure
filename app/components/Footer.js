@@ -53,7 +53,7 @@ const Footer = () => {
 
 						<ul className="list-unstyled ps-0 mb-0 mt-3">
 							<li className="mt-2">
-								<Link href="" className="text-black text-opacity-50">
+								<Link href="/about" className="text-black text-opacity-50">
 									About Us
 								</Link>
 							</li>

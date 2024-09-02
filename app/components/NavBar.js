@@ -5,7 +5,9 @@ import Image from 'next/image';
 import FFlogo from '../../public/images/My_1.png';
 
 
+
 const NavBar = () => {
+  
   return (
     <Navbar collapseOnSelect expand="lg" variant="light" className="py-lg-3 navbar-light">
       <Container>
@@ -22,7 +24,7 @@ const NavBar = () => {
               <Link href="/" className="nav-link active">Home</Link>
             </Nav.Item>
             <Nav.Item className="mx-lg-1">
-              <Link href="/attorney/firms" className="nav-link">Attorney</Link>
+              <Link href="/attorney/firms" className="nav-link active">Attorney</Link>
             </Nav.Item>
             {/* <Nav.Item className="mx-lg-1">
               <Link href="#pricing-landing" className="nav-link">Pricing</Link>
@@ -30,9 +32,9 @@ const NavBar = () => {
             {/* <Nav.Item className="mx-lg-1">
               <Link href="#faq-landing" className="nav-link">FAQs</Link>
             </Nav.Item> */}
-            <Nav.Item className="mx-lg-1">
+            {/* <Nav.Item className="mx-lg-1">
               <Link href="#contact-us-landing" className="nav-link">Contact</Link>
-            </Nav.Item>
+            </Nav.Item> */}
           </Nav>
 
           <ul className="navbar-nav ms-auto align-items-center">

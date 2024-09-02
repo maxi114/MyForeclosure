@@ -44,7 +44,7 @@ export default function Login({ searchParams }) {
   const { showNotification } = useNotificationContext();
 
   const redirectUrl = useMemo(
-    () => (searchParams?.from ? searchParams.from.toString() : '/dashboard/education/flashcards'),
+    () => (searchParams?.from ? searchParams.from.toString() : '/error/maintenance'),
     [searchParams]
   );
 
@@ -62,7 +62,7 @@ export default function Login({ searchParams }) {
           message: 'Login successful. Welcome!',
           type: 'success',
         });
-        router.push('/dashboard/education/flashcards');
+        router.push('/error/maintenance');
       }
     } catch (error) {
       showNotification({ message: error.message, type: 'error' });

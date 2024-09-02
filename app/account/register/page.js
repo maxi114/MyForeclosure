@@ -62,7 +62,7 @@ const schema = yup.object().shape({
               message: 'Registration successful. Welcome aboard!',
               type: 'success',
             });
-            router.push('/dashboard/education/flashcards');
+            router.push('/error/maintenance');
           } else {
             throw new Error('Registration failed');
           }
