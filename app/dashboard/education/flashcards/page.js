@@ -108,7 +108,7 @@ export default function Generate() {
      {/* Upload documents form commened below*/}
 
 
-    {/* <UploadDocumentsForm/> */}
+     <UploadDocumentsForm/> 
 
 
     <Typography variant="h4" component="h1" gutterBottom>

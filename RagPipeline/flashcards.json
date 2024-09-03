@@ -1,0 +1,101 @@
+{
+    "asset_recovery": {
+      "sections": [
+        {
+          "title": "Foreclosure Process",
+          "subtitle": "Steps Involved",
+          "steps": [
+            {
+              "step": "Default",
+              "description": "The borrower fails to make mortgage payments, leading to the initiation of the foreclosure process."
+            },
+            {
+              "step": "Notice of Default",
+              "description": "The lender files a notice of default, informing the borrower of their failure to meet the mortgage terms."
+            },
+            {
+              "step": "Pre-Foreclosure",
+              "description": "A period before the foreclosure sale during which the borrower can pay off the debt or sell the property to avoid foreclosure."
+            },
+            {
+              "step": "Foreclosure Sale",
+              "description": "If the borrower does not pay off the debt, the property is auctioned off at a foreclosure sale."
+            },
+            {
+              "step": "Deficiency Judgment",
+              "description": "If the sale does not cover the full amount owed, the lender may seek a deficiency judgment against the borrower for the remaining balance."
+            }
+          ]
+        },
+        {
+          "title": "Asset Recovery Process",
+          "subtitle": "Methods Used",
+          "steps": [
+            {
+              "step": "Repossession",
+              "description": "Lenders may repossess other assets secured by the loan in addition to the foreclosed property."
+            },
+            {
+              "step": "Legal Action",
+              "description": "Lenders can take legal action to recover the remaining debt through methods such as wage garnishment, bank levies, or placing liens on other properties."
+            },
+            {
+              "step": "Debt Collection",
+              "description": "Lenders may employ debt collection agencies to recover the remaining balance."
+            },
+            {
+              "step": "Charge-Offs",
+              "description": "If recovery is not possible, the lender may write off the debt as a loss, though this does not eliminate the debt, and recovery efforts may continue."
+            }
+          ]
+        },
+        {
+          "title": "Surplus Funds Recovery",
+          "subtitle": "Steps to Return Surplus Funds",
+          "steps": [
+            {
+              "step": "Calculation of Surplus",
+              "description": "Determine if there are surplus funds after the foreclosure sale by subtracting the debt owed from the sale proceeds."
+            },
+            {
+              "step": "Creditor Payment",
+              "description": "Pay any outstanding creditors from the surplus funds."
+            },
+            {
+              "step": "Distribution to Borrower",
+              "description": "Return any remaining surplus funds to the borrower."
+            }
+          ]
+        },
+        {
+          "title": "Legal Considerations",
+          "subtitle": "Consumer Protection and Bankruptcy",
+          "steps": [
+            {
+              "step": "Consumer Protection",
+              "description": "Laws and regulations such as the Fair Debt Collection Practices Act (FDCPA) protect borrowers from unethical recovery practices."
+            },
+            {
+              "step": "Bankruptcy Impact",
+              "description": "If a borrower files for bankruptcy, the asset recovery process may be impacted, potentially providing temporary relief from foreclosure or debt collection efforts."
+            }
+          ]
+        },
+        {
+          "title": "Asset Recovery Companies",
+          "subtitle": "Services Provided",
+          "steps": [
+            {
+              "step": "Specialized Recovery",
+              "description": "Some companies specialize in asset recovery, particularly in complex cases involving multiple assets or challenging foreclosure processes."
+            },
+            {
+              "step": "Investigative Services",
+              "description": "These companies provide investigative services to locate hidden assets or negotiate settlements."
+            }
+          ]
+        }
+      ]
+    }
+  }
+  

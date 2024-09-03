@@ -3,9 +3,14 @@ import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
 import { SupabaseVectorStore } from "@langchain/community/vectorstores/supabase";
 import { OpenAIEmbeddings } from "@langchain/openai";
 import { NextResponse } from "next/server";
+import connectDB from "../../../lib/MongoDbConnection/db";
 
 // Handler function
 export async function POST(req) {
+
+  await connectDB();
+
+  return
     
   try {
     const body = await req.json();

@@ -21,12 +21,5 @@ You should return in the following JSON format:
 }
 `
 
-export const FlashCardPrompt2 = `Make sure to create exactly 10 flashcards based on the following content:
 
-<content>
-  {content}
-</content>
-
-Flashcards:
-`
     
