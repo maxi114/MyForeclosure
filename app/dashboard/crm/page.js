@@ -1,13 +1,11 @@
-"use client"
 import React from 'react'
 
-const Dashboard = () => {
+const page = () => {
   return (
-
-    //*-------------Delete the below code and add your own code for the main landing page for the dashboard------------*
+    //*-------------Delete the below code and add your own code for the crm page for the dashboard------------*
     <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
           <div className="flex items-center">
-            <h1 className="text-lg font-semibold md:text-2xl">Dashboard</h1>
+            <h1 className="text-lg font-semibold md:text-2xl">CRM</h1>
           </div>
           <div
             className="flex flex-1 items-center justify-center rounded-lg border border-dashed shadow-sm" x-chunk="dashboard-02-chunk-1"
@@ -17,7 +15,7 @@ const Dashboard = () => {
                 This is the main dashboard page
               </h3>
               <p className="text-sm text-muted-foreground">
-                This page will be found inside app/dashboard/(overview)/page.js
+                This page will be found inside app/dashboard/crm/page.js
               </p>
             </div>
           </div>
@@ -25,4 +23,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard
+export default page
