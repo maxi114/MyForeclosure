@@ -125,6 +125,7 @@ export default function Generate() {
           sx={{ mb: 2 }}
         />
         <Button
+          className="btn btn-sm btn-primary rounded-pill d-none d-lg-inline-flex"
           variant="contained"
           color="primary"
           onClick={handleSubmit}

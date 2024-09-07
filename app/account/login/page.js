@@ -62,7 +62,7 @@ export default function Login({ searchParams }) {
           message: 'Login successful. Welcome!',
           type: 'success',
         });
-        router.push('/error/maintenance');
+        router.push('/dashboard');
       }
     } catch (error) {
       showNotification({ message: error.message, type: 'error' });

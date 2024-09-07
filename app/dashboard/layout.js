@@ -129,13 +129,13 @@ export default function DashNav({ children }) {
                 )}
               >
                 <Users className="h-5 w-5" />
-                Clients
+               Clients
               </Link>
             </nav>
           </div>
 
           {/*below code can be utilized to prompt users to upgrade their membership if need be*/}
-          <div className="mt-auto p-4">
+          {/* <div className="mt-auto p-4">
             <Card x-chunk="dashboard-02-chunk-0">
               <CardHeader className="p-2 pt-0 md:p-4">
                 <CardTitle>Upgrade to Pro</CardTitle>
@@ -150,7 +150,7 @@ export default function DashNav({ children }) {
                 </Button>
               </CardContent>
             </Card>
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -237,7 +237,7 @@ export default function DashNav({ children }) {
                   Clients
                 </Link>
               </nav>
-              <div className="mt-auto">
+              {/* <div className="mt-auto">
                 <Card>
                   <CardHeader>
                     <CardTitle>Upgrade to Pro</CardTitle>
@@ -252,7 +252,7 @@ export default function DashNav({ children }) {
                     </Button>
                   </CardContent>
                 </Card>
-              </div>
+              </div> */}
             </SheetContent>
           </Sheet>
 
