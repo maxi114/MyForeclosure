@@ -99,7 +99,7 @@ export default function DashNav({ children }) {
   }, [user, loading, router]);
 
   if (loading) {
-    return <div>Loading...</div>; // Or a more sophisticated loading component
+    return <div className="page-loading">Loading...</div>; // Or a more sophisticated loading component
   }
 
   if (!isAuthorized) {
