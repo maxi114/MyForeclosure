@@ -3,6 +3,7 @@ import { createContext, useContext, useState, useEffect, useMemo } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth, db } from '../firebase';
 import { doc, getDoc } from 'firebase/firestore';
+import { signOut } from 'firebase/auth';
 // import ProfileService from '../api/profile/route';
 
 // const AuthContext = createContext({});
@@ -15,7 +16,6 @@ export function AuthProvider({ children }) {
     // firebase auth functions
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
@@ -36,13 +36,19 @@ export function AuthProvider({ children }) {
         return () => unsubscribe();
     }, []);
 
+    const logout = async () => {
+        await signOut(auth);
+        setUser(null);
+    };
+
     const value = useMemo(() => {
-        console.log('AuthContext value:', { user, loading, setUser, isAuthenticated: !!user });
+        console.log('AuthContext value:', { user, loading, setUser, isAuthenticated: !!user, logout });
         return {
             user,
             loading,
             setUser,
-            isAuthenticated: !!user
+            isAuthenticated: !!user,
+            logout
         };
     }, [user, loading]);
 

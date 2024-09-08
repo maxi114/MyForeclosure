@@ -75,10 +75,10 @@ const navItems = {
 
 export default function DashNav({ children }) {
 
-  
+
   const authContext = useAuthContext();
   console.log('Full AuthContext in Dashboard:', authContext);
-  const { user, loading } = authContext || {};
+  const { user, loading, logout } = authContext || {};
   console.log('user in Dashboard:', user);
   console.log('loading in Dashboard:', loading);
 
@@ -108,10 +108,13 @@ export default function DashNav({ children }) {
   
   const userType = user?.role; 
   // Get the appropriate navigation items based on user type
-  const currentNavItems = navItems[userType];
+  const currentNavItems = navItems[userType] || [];
 
   // Function to render navigation links
   const renderNavLinks = (items) => {
+    if (!items || items.length === 0) {
+      return <div>No navigation items available</div>;
+    }
     return items.map((item) => (
       <Link
         key={item.href}
@@ -135,7 +138,6 @@ export default function DashNav({ children }) {
   };
 
   return (
-
    
     <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
        {/*--------------Below is the default side navigation for the whole dashboard----------*/}
@@ -272,7 +274,7 @@ export default function DashNav({ children }) {
               <DropdownMenuItem>Settings</DropdownMenuItem>
               <DropdownMenuItem>Support</DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Logout</DropdownMenuItem>
+              <DropdownMenuItem onClick={logout}>Logout</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </header>
