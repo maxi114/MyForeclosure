@@ -1,9 +1,7 @@
 import { getFirestore, doc, getDoc } from 'firebase/firestore';
-import { getAuth } from 'firebase/auth';
-import { firebaseApp } from '../../firebase'; // Ensure this path is correct
+import { auth, app as firebaseApp } from '../../firebase'; // Ensure this path is correct
 
 const db = getFirestore(firebaseApp);
-const auth = getAuth(firebaseApp);
 
 function ProfileService() {
   return {

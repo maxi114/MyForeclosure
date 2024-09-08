@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
-import { getFirestore, doc, setDoc } from 'firebase/firestore';
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail, signOut } from 'firebase/auth';
+import { getFirestore, doc, setDoc, getDoc } from 'firebase/firestore'
 
 // Firebase configuration
 const firebaseConfig = {
@@ -18,22 +18,29 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-export async function login(email, password) {
+async function login(email, password) {
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
-    return userCredential.user;
+    const user = userCredential.user;
+
+    // Fetch additional user data from Firestore
+    const userDoc = await getDoc(doc(db, "users", user.uid));
+    if (userDoc.exists()) {
+      return { ...user, ...userDoc.data() };
+    } else {
+      throw new Error('User data not found');
+    }
   } catch (error) {
     throw new Error('Email or Password is incorrect');
   }
 }
 
-export async function register(firstname, lastname, email, password, role) {
+async function register(firstname, lastname, email, password, role) {
   try {
-
     // Validate role
-    console.log("role:", role)
-    if (role !=='Homeowner' && role !== 'Attorney') {
-      throw new Error('Invalid role. Must be either "Homeowner" or "Attorney".');
+    const validRoles = ['Homeowner', 'Attorney', 'Investor', 'Realtor'];
+    if (!validRoles.includes(role)) {
+      throw new Error('Invalid role. Must be one of: ' + validRoles.join(', '));
     }
 
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
@@ -52,11 +59,11 @@ export async function register(firstname, lastname, email, password, role) {
     return user;
   } catch (error) {
     console.error('Registration error:', error);
-    throw new Error('Registration failed' + error.message);
+    throw new Error('Registration failed: ' + error.message);
   }
 }
 
-export async function forgotPassword(email) {
+async function forgotPassword(email) {
   try {
     await sendPasswordResetEmail(auth, email);
     return "We've sent you a link to reset password to your registered email.";
@@ -65,4 +72,13 @@ export async function forgotPassword(email) {
   }
 }
 
-export const firebaseApp = app;
+async function logout() {
+  try {
+      await signOut(auth);
+  } catch (error) {
+      throw new Error('Logout failed: ' + error.message);
+  }
+}
+
+// Single consolidated export
+export { auth, db, app, login, logout, register, forgotPassword };

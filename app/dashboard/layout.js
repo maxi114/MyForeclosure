@@ -2,7 +2,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import clsx from 'clsx'
-import { usePathname } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
+import { useAuthContext } from '../context/AuthContext';
+import { useEffect, useState } from 'react';
+import '../styles/dashboard.css';
 
 import {
   Bell,
@@ -40,17 +43,102 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 export const description =
   "A products dashboard with a sidebar navigation and a main content area. The dashboard has a header with a search input and a user menu. The sidebar has a logo, navigation links, and a card with a call to action. The main content area shows an empty state with a call to action.";
 
+const navItems = {
+  Attorney: [
+    { href: "/dashboard", icon: Home, label: "Dashboard" },
+    { href: "/dashboard/education", icon: GraduationCap, label: "Education" },
+    { href: "/dashboard/crm", icon: Package, label: "CRM", badge: 6 },
+    { href: "/dashboard/clients", icon: Users, label: "Clients" },
+    { href: "/dashboard/analytics", icon: LineChart, label: "Analytics" },
+    { href: "/dashboard/filemanager", icon: Package, label: "File Manager" },
+  ],
+  Realtor: [
+    { href: "/dashboard", icon: Home, label: "Dashboard" },
+    { href: "/dashboard/crm", icon: Package, label: "CRM", badge: 6 },
+    { href: "/dashboard/clients", icon: Users, label: "Clients" },
+    { href: "/dashboard/filemanager", icon: Package, label: "File Manager" },
+  ],
+  Homeowner: [
+    { href: "/dashboard", icon: Home, label: "Dashboard" },
+    { href: "/dashboard/education", icon: GraduationCap, label: "Education" },
+    { href: "/dashboard/inbox", icon: Package, label: "Inbox" },
+    { href: "/dashboard/filemanager", icon: Package, label: "File Manager" },
+  ],
+  Investor: [
+    { href: "/dashboard", icon: Home, label: "Dashboard" },
+    { href: "/dashboard/marketplace", icon: GraduationCap, label: "Marketplace" },
+    { href: "/dashboard/crm", icon: Package, label: "CRM", badge: 6 },
+    { href: "/dashboard/propertylistings", icon: Package, label: "Property Listings" },
+    { href: "/dashboard/filemanager", icon: Package, label: "File Manager" },
+  ],
+};
+
 export default function DashNav({ children }) {
 
+  
+  const authContext = useAuthContext();
+  console.log('Full AuthContext in Dashboard:', authContext);
+  const { user, loading } = authContext || {};
+  console.log('user in Dashboard:', user);
+  console.log('loading in Dashboard:', loading);
+
+
+  const router = useRouter();
   //this will track the users url path
-  const pathname = usePathname();//get the current pathname
+  const pathname = usePathname(); //get the current pathname
+  const [isAuthorized, setIsAuthorized] = useState(false);
+
+  useEffect(() => {
+    if (!loading) {
+      if (user) {
+        setIsAuthorized(true);
+      } else {
+        router.push('/account/login');
+      }
+    }
+  }, [user, loading, router]);
+
+  if (loading) {
+    return <div>Loading...</div>; // Or a more sophisticated loading component
+  }
+
+  if (!isAuthorized) {
+    return null; // Or a more appropriate placeholder
+  }
+  
+  const userType = user?.role; 
+  // Get the appropriate navigation items based on user type
+  const currentNavItems = navItems[userType];
+
+  // Function to render navigation links
+  const renderNavLinks = (items) => {
+    return items.map((item) => (
+      <Link
+        key={item.href}
+        href={item.href}
+        className={clsx(
+          'mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground',
+          {
+            'text-primary bg-muted': pathname === item.href,
+          },
+        )}
+      >
+        <item.icon className="h-4 w-4" />
+        {item.label}
+        {item.badge && (
+          <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
+            {item.badge}
+          </Badge>
+        )}
+      </Link>
+    ));
+  };
 
   return (
 
    
     <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
        {/*--------------Below is the default side navigation for the whole dashboard----------*/}
-
 
        {/*-----------This code inside this div below is the one displayed renderd on larger screens------*/}
       <div className="hidden border-r bg-muted/40 md:block">
@@ -77,60 +165,10 @@ export default function DashNav({ children }) {
           </div>
 
           {/*-----------links for the dashboard are renderd inside this div-------------*/}
+          {/* Navigation links */}
           <div className="flex-1">
             <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
-              <Link
-                href="/dashboard"
-                className={clsx(
-                  'mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground ',
-                  {
-                    'text-primary bg-muted': pathname === '/dashboard',
-                  },
-                )}
-              >
-                <Home className="h-4 w-4" />
-                Dashboard
-              </Link>
-              <Link
-                href="/dashboard/education"
-                className={clsx(
-                  'mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground ',
-                  {
-                    'text-primary bg-muted': pathname === '/dashboard/education',
-                  },
-                )}
-              >
-                <GraduationCap className="h-4 w-4" />
-                Education
-              </Link>
-              <Link
-                href="/dashboard/crm"
-                className={clsx(
-                  'mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground ',
-                  {
-                    'text-primary bg-muted': pathname === '/dashboard/crm',
-                  },
-                )}
-              >
-                <Package className="h-4 w-4" />
-                CRM
-                <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
-                  6
-                </Badge>
-              </Link>
-
-              <Link
-                href="/dashboard/clients"
-                className={clsx(
-                  'mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground ',
-                  {
-                    'text-primary bg-muted': pathname === '/dashboard/clients',
-                  },
-                )}
-              >
-                <Users className="h-5 w-5" />
-               Clients
-              </Link>
+              {renderNavLinks(currentNavItems)}
             </nav>
           </div>
 
@@ -183,59 +221,7 @@ export default function DashNav({ children }) {
                   />
                   <span className="sr-only">MyForeclosure</span>
                 </Link>
-                <Link
-                  href="/dashboard"
-                  className={clsx(
-                    'mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground ',
-                    {
-                      'text-primary bg-muted': pathname === '/dashboard',
-                    },
-                  )}
-                >
-                  <Home className="h-5 w-5" />
-                  Dashboard
-                </Link>
-                <Link
-                  href="/dashboard/education"
-                  className={clsx(
-                    'mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground ',
-                    {
-                      'text-primary bg-muted': pathname === '/dashboard/education',
-                    },
-                  )}
-                >
-                  <GraduationCap className="h-5 w-5" />
-                  Education
-                </Link>
-
-                <Link
-                  href="/dashboard/crm"
-                  className={clsx(
-                    'mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground ',
-                    {
-                      'text-primary bg-muted': pathname === '/dashboard/crm',
-                    },
-                  )}
-                >
-                  <Package className="h-5 w-5" />
-                  CRM
-                  <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
-                    6
-                  </Badge>
-                </Link>
-
-                <Link
-                  href="/dashboard/clients"
-                  className={clsx(
-                    'mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground ',
-                    {
-                      'text-primary bg-muted': pathname === '/dashboard/clients',
-                    },
-                  )}
-                >
-                  <Users className="h-5 w-5" />
-                  Clients
-                </Link>
+                 {renderNavLinks(currentNavItems)}
               </nav>
               {/* <div className="mt-auto">
                 <Card>

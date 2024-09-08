@@ -1,8 +1,6 @@
-import { login, register, forgotPassword } from '../../firebase';
-import { getAuth, signOut } from 'firebase/auth';
-import { firebaseApp } from '../../firebase';
+import { login, register, forgotPassword, auth as firebaseAuth } from '../../firebase';
+import { signOut } from 'firebase/auth';
 
-const auth = getAuth(firebaseApp);
 
 function AuthService() {
   return {
@@ -17,7 +15,7 @@ function AuthService() {
 
     logout: async () => {
       try {
-        await signOut(auth);
+        await signOut(firebaseAuth);
       } catch (error) {
         throw new Error('Logout failed: ' + error.message);
       }

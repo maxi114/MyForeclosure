@@ -1,5 +1,6 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from 'tailwindcss'
+
+const config: Config = {
     darkMode: ['class'],
     content: [
     './pages/**/*.{js,ts,jsx,tsx}', // For Next.js
@@ -60,3 +61,5 @@ module.exports = {
   plugins: [require("tailwindcss-animate")],
 }
 
+
+export default config

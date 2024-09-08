@@ -1,5 +1,5 @@
 'use client';
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
@@ -13,6 +13,7 @@ import { useAuthContext } from '../../context/AuthContext';
 import { useNotificationContext } from '../../context/NotificationContext';
 import authApi from '../../api/auth/route';
 import * as yup from 'yup';
+import { useSearchParams } from 'next/navigation';
 
 const loginFormSchema = yup.object({
   email: yup.string().email('Please enter valid email').required('Please enter email'),
@@ -36,15 +37,27 @@ const BottomLink = () => {
   );
 };
 
-export default function Login({ searchParams }) {
+export default function Login() {
   const { t } = useTranslation();
   const router = useRouter();
   const [loading, setLoading] = useState(false);
-  const { isAuthenticated } = useAuthContext();
+  const authContext = useAuthContext();
+  console.log('Full AuthContext in Login:', authContext);
+  const { user, setUser, isAuthenticated } = authContext || {};
+  console.log('setUser in Login:', setUser);
+  console.log('user in Login:', user);
+  console.log('isAuthenticated in Login:', isAuthenticated);
   const { showNotification } = useNotificationContext();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    if (authContext === null) {
+      console.error('AuthContext is null. Make sure AuthProvider is wrapping your app.');
+    }
+  }, [authContext]);
 
   const redirectUrl = useMemo(
-    () => (searchParams?.from ? searchParams.from.toString() : '/error/maintenance'),
+    () => searchParams.get('from') || '/dashboard',
     [searchParams]
   );
 
@@ -52,20 +65,27 @@ export default function Login({ searchParams }) {
     router.replace(redirectUrl);
     return null;
   }
-
+ 
   const handleLogin = async (values) => {
     setLoading(true);
     try {
       const user = await authApi.login(values);
       if (user) {
+        if (typeof setUser === 'function') {
+          setUser(user);
+        } else {
+          console.error('setUser is not a function:', setUser);
+          console.log('Full authContext:', authContext);
+        }
         showNotification({
           message: 'Login successful. Welcome!',
           type: 'success',
         });
-        router.push('/dashboard');
+        router.replace(redirectUrl);
       }
     } catch (error) {
-      showNotification({ message: error.message, type: 'error' });
+      console.error('Login error:', error);
+      showNotification({ message: error.message || 'An error occurred during login', type: 'error' });
     } finally {
       setLoading(false);
     }
@@ -79,7 +99,6 @@ export default function Login({ searchParams }) {
           {t('Enter your email and password to access admin panel.')}
         </p>
       </div>
-
       <Form
         onSubmit={handleLogin}
         schema={loginFormSchema}
@@ -116,9 +135,9 @@ export default function Login({ searchParams }) {
         />
 
         <div className="mb-3 text-center">
-          <Button variant="primary" type="submit" disabled={loading}>
-            {t('Log In')}
-          </Button>
+        <Button variant="primary" type="submit" disabled={loading}>
+          {loading ? t('Logging in...') : t('Log In')}
+        </Button>
         </div>
       </Form>
     </AccountWrapper>
