@@ -4,7 +4,7 @@ import Image from "next/image";
 import clsx from 'clsx'
 import { useRouter, usePathname } from 'next/navigation';
 import { useAuthContext } from '../context/AuthContext';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/dashboard.css';
 
 import {
