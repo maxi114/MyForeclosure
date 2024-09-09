@@ -48,6 +48,7 @@ const navItems = {
     { href: "/dashboard", icon: Home, label: "Dashboard" },
     { href: "/dashboard/education", icon: GraduationCap, label: "Education" },
     { href: "/dashboard/crm", icon: Package, label: "CRM", badge: 6 },
+    { href: "/dashboard/inbox", icon: Package, label: "Inbox" },
     { href: "/dashboard/clients", icon: Users, label: "Clients" },
     { href: "/dashboard/analytics", icon: LineChart, label: "Analytics" },
     { href: "/dashboard/filemanager", icon: Package, label: "File Manager" },
@@ -55,6 +56,7 @@ const navItems = {
   Realtor: [
     { href: "/dashboard", icon: Home, label: "Dashboard" },
     { href: "/dashboard/crm", icon: Package, label: "CRM", badge: 6 },
+    { href: "/dashboard/inbox", icon: Package, label: "Inbox" },
     { href: "/dashboard/clients", icon: Users, label: "Clients" },
     { href: "/dashboard/filemanager", icon: Package, label: "File Manager" },
   ],
@@ -68,6 +70,7 @@ const navItems = {
     { href: "/dashboard", icon: Home, label: "Dashboard" },
     { href: "/dashboard/marketplace", icon: GraduationCap, label: "Marketplace" },
     { href: "/dashboard/crm", icon: Package, label: "CRM", badge: 6 },
+    { href: "/dashboard/inbox", icon: Package, label: "Inbox" },
     { href: "/dashboard/propertylistings", icon: Package, label: "Property Listings" },
     { href: "/dashboard/filemanager", icon: Package, label: "File Manager" },
   ],
