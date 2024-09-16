@@ -18,7 +18,7 @@ import {
   Search,
   GraduationCap,
   Users,
-} from "lucide-react";
+} from "lucide-react"; 
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -52,6 +52,7 @@ const navItems = {
     { href: "/dashboard/clients", icon: Users, label: "Clients" },
     { href: "/dashboard/analytics", icon: LineChart, label: "Analytics" },
     { href: "/dashboard/filemanager", icon: Package, label: "File Manager" },
+    { href: "/dashboard/webscraper", icon: Package, label: "Web Scraper" },
   ],
   Realtor: [
     { href: "/dashboard", icon: Home, label: "Dashboard" },
